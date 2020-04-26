@@ -1,0 +1,25 @@
+{
+  "name": "code-archive",
+  "version": "1.0.0",
+  "description": "This is repo where I archive some of the code examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nialvi/code-archive.git"
+  },
+  "author": "Nikolaev Viktor <maclauddd@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nialvi/code-archive/issues"
+  },
+  "homepage": "https://github.com/nialvi/code-archive#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.4.0",
+    "jest": "^25.4.0"
+  }
+}
