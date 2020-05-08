@@ -10,7 +10,9 @@ This is repo where I archive some of the code examples
 
 ## Generator problem
 
-Go to `src` folder and run generator.
+Before use generator go to `cd ./tools/generator-problem` and use `npm link`.
+
+After go to `src` folder and run generator.
 
 `cd src`
 
