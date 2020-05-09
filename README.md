@@ -10,12 +10,8 @@ This is repo where I archive some of the code examples
 
 ## Generator problem
 
-Before use generator go to `cd ./tools/generator-problem` and use `npm link`.
+Before use generator install Yeoman `npm install -g yo`
 
-After go to `src` folder and run generator.
-
-`cd src`
-
-`yo problem`
+Run generator `yo problem`
 
 You should insert a name of a problem (aka function name) and description of a problem (detailed readme instruction).

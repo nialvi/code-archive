@@ -3,5 +3,5 @@
 <%= description %>
 
 ```javascript
-# <%= name() %>
+<%= name %>()
 ```

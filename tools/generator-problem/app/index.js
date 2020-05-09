@@ -22,7 +22,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath("README.md"),
-      this.destinationPath(`${this.answers.name}/README.md`),
+      this.destinationPath(`src/${this.answers.name}/README.md`),
       {
         name: this.answers.name,
         description: this.answers.description,
@@ -31,7 +31,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("index.js"),
-      this.destinationPath(`${this.answers.name}/index.js`),
+      this.destinationPath(`src/${this.answers.name}/index.js`),
       {
         name: this.answers.name,
       }
@@ -39,7 +39,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("index.spec.js"),
-      this.destinationPath(`${this.answers.name}/index.spec.js`),
+      this.destinationPath(`src/${this.answers.name}/index.spec.js`),
       {
         name: this.answers.name,
       }
