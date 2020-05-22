@@ -1,0 +1,7 @@
+# mergeSort
+
+description
+
+```javascript
+mergeSort()
+```
