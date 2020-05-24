@@ -4,7 +4,8 @@
   "description": "This is repo where I archive some of the code examples",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
