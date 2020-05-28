@@ -1,0 +1,7 @@
+# singlyLinkedList
+
+description
+
+```javascript
+singlyLinkedList()
+```
