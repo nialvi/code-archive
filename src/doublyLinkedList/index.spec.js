@@ -15,4 +15,20 @@ describe("doublyLinkedList", () => {
     expect(list.tail).toBe(null);
     expect(list.length).toBe(0);
   });
+
+  it("should be push value", () => {
+    const list = new DoublyLinkedList();
+
+    list.push(42);
+
+    expect(list.head.value).toBe(42);
+    expect(list.tail.value).toBe(42);
+    expect(list.length).toBe(1);
+
+    list.push(13);
+    expect(list.head.value).toBe(42);
+    expect(list.tail.value).toBe(13);
+    expect(list.tail.prev.value).toBe(42);
+    expect(list.length).toBe(2);
+  });
 });
