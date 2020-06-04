@@ -16,7 +16,7 @@ export class DoublyLinkedList {
   push(value) {
     const newNode = new Node(value);
 
-    if (!this.head) {
+    if (this.length === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -28,5 +28,24 @@ export class DoublyLinkedList {
     this.length += 1;
 
     return this;
+  }
+
+  pop() {
+    if (this.length === 0) {
+      return null;
+    }
+
+    let val = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = this.tail.prev;
+      this.tail.next = null;
+    }
+
+    this.length -= 1;
+    return val;
   }
 }

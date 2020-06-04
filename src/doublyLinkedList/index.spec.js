@@ -31,4 +31,41 @@ describe("doublyLinkedList", () => {
     expect(list.tail.prev.value).toBe(42);
     expect(list.length).toBe(2);
   });
+
+  describe("pop", () => {
+    it("should return null", () => {
+      const list = new DoublyLinkedList();
+
+      expect(list.pop()).toBe(null);
+      expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
+      expect(list.length).toBe(0);
+    });
+
+    it("should return empty list", () => {
+      const list = new DoublyLinkedList();
+      list.push(42);
+
+      let val = list.pop();
+
+      expect(val.value).toBe(42);
+      expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
+      expect(list.length).toBe(0);
+    });
+
+    it("should stay one item in list", () => {
+      const list = new DoublyLinkedList();
+      list.push(42);
+      list.push(13);
+
+      let val = list.pop();
+
+      expect(val.value).toBe(13);
+      expect(list.head.value).toBe(42);
+      expect(list.tail.value).toBe(42);
+      expect(list.tail.next).toBe(null);
+      expect(list.length).toBe(1);
+    });
+  });
 });
