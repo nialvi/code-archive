@@ -35,7 +35,7 @@ export class DoublyLinkedList {
       return null;
     }
 
-    let val = this.tail;
+    let deletedNode = this.tail;
 
     if (this.length === 1) {
       this.head = null;
@@ -46,6 +46,26 @@ export class DoublyLinkedList {
     }
 
     this.length -= 1;
-    return val;
+    return deletedNode;
+  }
+
+  shift() {
+    if (this.length === 0) {
+      return null;
+    }
+
+    let deletedNode = this.head;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = deletedNode.next;
+      this.head.prev = null;
+      deletedNode.next = null;
+    }
+
+    this.length -= 1;
+    return deletedNode;
   }
 }

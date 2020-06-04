@@ -68,4 +68,35 @@ describe("doublyLinkedList", () => {
       expect(list.length).toBe(1);
     });
   });
+
+  describe("shift", () => {
+    it("should return null when empty list", () => {
+      const list = new DoublyLinkedList();
+      expect(list.shift()).toBe(null);
+      expect(list.tail).toBe(null);
+      expect(list.head).toBe(null);
+      expect(list.length).toBe(0);
+    });
+
+    it("should be empty list when it had only one item", () => {
+      const list = new DoublyLinkedList();
+      list.push(42);
+
+      expect(list.shift().value).toBe(42);
+      expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
+      expect(list.length).toBe(0);
+    });
+
+    it("should remove only head item", () => {
+      const list = new DoublyLinkedList();
+
+      list.push(42).push(13).push(69);
+
+      expect(list.shift().value).toBe(42);
+      expect(list.head.value).toBe(13);
+      expect(list.tail.value).toBe(69);
+      expect(list.length).toBe(2);
+    });
+  });
 });
