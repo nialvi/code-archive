@@ -121,4 +121,23 @@ describe("doublyLinkedList", () => {
       expect(list.tail.value).toBe(13);
     });
   });
+
+  describe("get", () => {
+    it("should return null when get index incorrect", () => {
+      const list = new DoublyLinkedList();
+      list.push(42).push(13);
+
+      expect(list.get(-11)).toBe(null);
+      expect(list.get(11)).toBe(null);
+    });
+
+    it("should be get correct item from list", () => {
+      const list = new DoublyLinkedList();
+      list.push(42).push(13).push(69).push(11);
+
+      expect(list.get(0).value).toBe(42);
+      expect(list.get(2).value).toBe(69);
+      expect(list.get(3).value).toBe(11);
+    });
+  });
 });

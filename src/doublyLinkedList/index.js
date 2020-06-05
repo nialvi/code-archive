@@ -84,4 +84,31 @@ export class DoublyLinkedList {
     this.length += 1;
     return this;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    const goFromEnd = index >= this.length / 2;
+    let current;
+
+    if (goFromEnd) {
+      let start = this.length - 1;
+      current = this.tail;
+      while (start !== index) {
+        current = current.prev;
+        start -= 1;
+      }
+    } else {
+      let start = 0;
+      current = this.head;
+      while (start !== index) {
+        current = current.next;
+        start += 1;
+      }
+    }
+
+    return current;
+  }
 }
