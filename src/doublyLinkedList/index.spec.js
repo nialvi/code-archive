@@ -99,4 +99,26 @@ describe("doublyLinkedList", () => {
       expect(list.length).toBe(2);
     });
   });
+
+  describe("unshift", () => {
+    it("should be one item in list", () => {
+      const list = new DoublyLinkedList();
+      list.unshift(42);
+
+      expect(list.length).toBe(1);
+      expect(list.head.value).toBe(42);
+      expect(list.tail.value).toBe(42);
+    });
+
+    it("should be add item in first place", () => {
+      const list = new DoublyLinkedList();
+      list.push(42).push(13);
+      list.unshift(69);
+
+      expect(list.length).toBe(3);
+      expect(list.head.value).toBe(69);
+      expect(list.head.prev).toBe(null);
+      expect(list.tail.value).toBe(13);
+    });
+  });
 });
