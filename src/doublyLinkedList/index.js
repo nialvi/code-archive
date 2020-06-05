@@ -111,4 +111,15 @@ export class DoublyLinkedList {
 
     return current;
   }
+
+  set(value, index) {
+    const node = this.get(index);
+
+    if (node) {
+      node.value = value;
+      return true;
+    }
+
+    return false;
+  }
 }

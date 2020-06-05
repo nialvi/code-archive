@@ -140,4 +140,21 @@ describe("doublyLinkedList", () => {
       expect(list.get(3).value).toBe(11);
     });
   });
+
+  describe("set", () => {
+    it("should not set value", () => {
+      const list = new DoublyLinkedList();
+      list.push(42).push(13).push(11);
+
+      expect(list.set(69, 11)).toBe(false);
+    });
+
+    it("should set new value", () => {
+      const list = new DoublyLinkedList();
+      list.push(42).push(13).push(11);
+
+      expect(list.set(69, 1)).toBe(true);
+      expect(list.get(1).value).toBe(69);
+    });
+  });
 });
