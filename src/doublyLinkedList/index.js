@@ -149,4 +149,31 @@ export class DoublyLinkedList {
 
     return true;
   }
+
+  remove(index) {
+    if (index < -1 || index >= this.length) {
+      return null;
+    }
+
+    if (index === 0) {
+      return this.shift();
+    }
+
+    if (index === this.length - 1) {
+      return this.pop();
+    }
+
+    const deletedItem = this.get(index);
+    const beforeItem = deletedItem.prev;
+    const afterItem = deletedItem.next;
+
+    beforeItem.next = afterItem;
+    afterItem.prev = beforeItem;
+
+    deletedItem.prev = null;
+    deletedItem.next = null;
+    this.length -= 1;
+
+    return deletedItem;
+  }
 }

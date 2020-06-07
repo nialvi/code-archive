@@ -202,4 +202,41 @@ describe("doublyLinkedList", () => {
       });
     });
   });
+
+  describe("remove", () => {
+    it("should not remove item and return null", () => {
+      const list = new DoublyLinkedList();
+      expect(list.remove(-10)).toBe(null);
+      expect(list.remove(100)).toBe(null);
+    });
+
+    describe("remove item", () => {
+      it("should not remove first item", () => {
+        const list = new DoublyLinkedList();
+        list.push(13).push(69).push(42);
+
+        expect(list.remove(0).value).toBe(13);
+        expect(list.length).toBe(2);
+        expect(list.head.value).toBe(69);
+      });
+
+      it("should not remove last item", () => {
+        const list = new DoublyLinkedList();
+        list.push(13).push(69).push(42);
+
+        expect(list.remove(2).value).toBe(42);
+        expect(list.length).toBe(2);
+        expect(list.tail.value).toBe(69);
+      });
+
+      it("should not remove some item", () => {
+        const list = new DoublyLinkedList();
+        list.push(13).push(69).push(42);
+
+        expect(list.remove(1).value).toBe(69);
+        expect(list.length).toBe(2);
+        expect(list.head.next.value).toBe(42);
+      });
+    });
+  });
 });
