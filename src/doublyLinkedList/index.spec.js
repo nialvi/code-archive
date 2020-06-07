@@ -157,4 +157,49 @@ describe("doublyLinkedList", () => {
       expect(list.get(1).value).toBe(69);
     });
   });
+
+  describe("insert", () => {
+    it("should return false", () => {
+      const list = new DoublyLinkedList();
+      list.push(13).push(69).push(11);
+
+      expect(list.insert(100, -11)).toBe(false);
+      expect(list.insert(100, 11)).toBe(false);
+    });
+
+    describe("should return true with correct insert", () => {
+      it("should insert in first place", () => {
+        const list = new DoublyLinkedList();
+        list.push(13).push(69).push(11);
+
+        expect(list.insert(100, 0)).toBe(true);
+        expect(list.head.value).toBe(100);
+        expect(list.head.prev).toBe(null);
+        expect(list.length).toBe(4);
+      });
+
+      it("should insert in last place", () => {
+        const list = new DoublyLinkedList();
+        list.push(13).push(69).push(11);
+
+        expect(list.insert(100, 3)).toBe(true);
+        expect(list.tail.value).toBe(100);
+        expect(list.tail.prev.value).toBe(11);
+        expect(list.length).toBe(4);
+      });
+
+      it("should insert in some place", () => {
+        const list = new DoublyLinkedList();
+        list.push(13).push(69).push(11);
+        const result = list.insert(100, 1);
+        const item = list.get(1);
+
+        expect(result).toBe(true);
+        expect(item.value).toBe(100);
+        expect(item.next.value).toBe(69);
+        expect(item.prev.value).toBe(13);
+        expect(list.length).toBe(4);
+      });
+    });
+  });
 });
