@@ -1,0 +1,7 @@
+# stack
+
+description
+
+```javascript
+stack()
+```
