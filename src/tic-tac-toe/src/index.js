@@ -24,6 +24,10 @@ class Board extends React.Component {
     const { isXNext } = this.state;
     const squares = this.state.squares.slice();
 
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+
     squares[i] = isXNext ? "X" : "O";
     this.setState({ squares, isXNext: !isXNext });
   };
@@ -38,8 +42,12 @@ class Board extends React.Component {
   }
 
   render() {
-    const { isXNext } = this.state;
-    const status = `Next player: ${isXNext ? "X" : "O"}`;
+    const { isXNext, squares } = this.state;
+    const winner = calculateWinner(squares);
+
+    const status = winner
+      ? `Winner ${winner}`
+      : `Next player: ${isXNext ? "X" : "O"}`;
 
     return (
       <div>
@@ -78,6 +86,26 @@ class Game extends React.Component {
       </div>
     );
   }
+}
+
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
 }
 
 // ========================================
