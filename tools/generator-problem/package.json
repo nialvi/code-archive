@@ -9,6 +9,6 @@
   "author": "Nikolaev Viktor <maclauddd@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "yeoman-generator": "^4.10.0"
+    "yeoman-generator": "^5.6.1"
   }
 }
