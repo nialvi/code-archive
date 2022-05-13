@@ -10,7 +10,7 @@ This is repo where I archive some of the code examples
 
 ## Generator problem
 
-Before use generator install Yeoman `npm install -g yo`
+Before use generator install Yeoman `npm install -g yo`. Go to the `tools/generator-problem` folder and create a symlink of generator `npm link`
 
 Run generator `yo problem`
 
