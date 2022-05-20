@@ -26,17 +26,17 @@ export class BinarySearchTree {
       if (value > current.value) {
         if (current.right) {
           current = current.right;
+        } else {
+          current.right = newNode;
+          return this;
         }
-
-        current.right = newNode;
-        return this;
       } else if (value < current.value) {
         if (current.left) {
           current = current.left;
+        } else {
+          current.left = newNode;
+          return this;
         }
-
-        current.left = newNode;
-        return this;
       }
 
       if (value === current.value) {

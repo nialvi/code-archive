@@ -40,6 +40,25 @@ describe("binarySearchTree", () => {
     expect(rightNode.right).toBe(null);
   });
 
+  it("should insert a value in a third level of tree", () => {
+    const tree = new BinarySearchTree();
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(13);
+    tree.insert(3);
+    tree.insert(7);
+
+    const { left: leftNode, right: rightNode } = tree.root;
+
+    expect(leftNode.value).toBe(5);
+    expect(leftNode.left.value).toBe(3);
+    expect(leftNode.right.value).toBe(7);
+
+    expect(rightNode.value).toBe(13);
+    expect(rightNode.left).toBe(null);
+    expect(rightNode.right).toBe(null);
+  });
+
   it("should find node by value", () => {
     const tree = new BinarySearchTree();
     tree.insert(10);
